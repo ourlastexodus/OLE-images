@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Last Exodus - Modern Relocation Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FFDE59;    /* Vibrant yellow */
+            --secondary: #019C15;  /* Fresh green */
+            --accent: #CA0101;     /* Bold red */
+            --dark: #000000;       /* Black */
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0 5px;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo {
+            height: 80px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu li {
+            margin: 0;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--accent);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Purpose Section */
+        .purpose {
+            background-color: #f1f5f9;
+        }
+        
+        .purpose-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .purpose-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .purpose-text p {
+            margin-bottom: 20px;
+        }
+        
+        /* Helpful Information */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .info-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--secondary);
+            transition: transform 0.3s;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* Relocation Tips */
+        .tips {
+            background-color: white;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .tip-card {
+            background-color: #f8fafc;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tip-card h3 {
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        /* Top Destinations */
+        .destinations {
+            background-color: white;
+        }
+        
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .destination-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .destination-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .destination-content {
+            padding: 20px;
+        }
+        
+        .destination-content h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        /* Packages */
+        .packages {
+            background-color: #f1f5f9;
+        }
+        
+        .package-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .package-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .package-card.featured {
+            border: 3px solid var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .package-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+        
+        .package-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .package-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-features li:before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Consultation Packages */
+        .consultation {
+            background-color: white;
+        }
+        
+        .consultation-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .consultation-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 30px 25px;
+            position: relative;
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .consultation-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .consultation-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .consultation-price {
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .consultation-features {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        
+        .consultation-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .consultation-features li:before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .purpose-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .package-card.featured {
+                transform: scale(1);
+            }
+            
+            .package-card.featured:hover {
+                transform: translateY(-5px);
+            }
+            
+            .logo {
+                height: 60px;
+            }
+            
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="https://github.com/ourlastexodus/OLE-images/raw/main/OLE%20Final%20Logo%20Trans.png" alt="Our Last Exodus Logo" class="logo" onerror="this.src='https://via.placeholder.com/300x100/FFDE59/000000?text=Our+Last+Exodus+Logo'">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#purpose">Our Purpose</a></li>
+                <li><a href="#information">Information</a></li>
+                <li><a href="#tips">Relocation Tips</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#packages">Relocation Packages</a></li>
+                <li><a href="#consultation">Consultation</a></li>
+                <li><a href="#contact" class="btn">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Begin Your Journey <span>Home</span></h1>
+            <p>Facilitating the repatriation of African Americans to Africa with culturally conscious relocation services. We handle the details so you can focus on your new beginning.</p>
+            <a href="https://book.squareup.com/appointments/tz4j2uauuzk1bm/location/LJJ1R4190KWY7/services/IQEFNVQO2EGZT4T2AE2OJYNA" class="btn" target="_blank">Free Consultation Call</a>
+        </div>
+    </section>
+
+    <!-- Purpose Section -->
+    <section id="purpose" class="purpose">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Purpose & Mission</h2>
+                <p>Why we're passionate about helping you relocate successfully</p>
+            </div>
+            <div class="purpose-content">
+                <div class="purpose-text">
+                    <h2>Making Relocation Simple and Meaningful</h2>
+                    <p>Our mission is to facilitate connections and promote cultural exchange between the African American community and the African continent, by offering resources, information, and services that enable a seamless transition for those looking to live, work, or travel in Africa.</p>
+                    <p>At Our Last Exodus, we believe that relocation should be an exciting new chapter, not a stressful ordeal. Our mission is to provide comprehensive relocation services that simplify your transition to a new country. Our goal is to foster a deep appreciation for African culture and heritage, while also providing practical support for expats looking to navigate the challenges of life abroad.</p>
+                    <p>With years of experience and a global network of partners, we handle everything from visa applications to finding your new home, ensuring a smooth and successful relocation process.</p>
+                    <a href="#information" class="btn">Learn More About Our Services</a>
+                </div>
+                <div class="purpose-image">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Our team helping clients" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Helpful Information -->
+    <section id="information" class="information">
+        <div class="container">
+            <div class="section-title">
+                <h2>Helpful Information</h2>
+                <p>Essential resources and guidance to prepare you for a successful international relocation.</p>
+            </div>
+            <div class="info-cards">
+                <div class="info-card">
+                    <i class="fas fa-passport"></i>
+                    <h3>Visa & Documentation</h3>
+                    <p>Complete guidance on visa requirements, application processes, and essential documentation for your move.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Housing Solutions</h3>
+                    <p>Assistance finding temporary and permanent housing that meets your needs and budget in your new country.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-school"></i>
+                    <h3>Education Services</h3>
+                    <p>Help navigating educational systems and finding the right schools for your children in your new location.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Shipping Services</h3>
+                    <p>Comprehensive shipping solutions for your belongings with customs clearance assistance and secure delivery to your new home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Relocation Tips -->
+    <section id="tips" class="tips">
+        <div class="container">
+            <div class="section-title">
+                <h2>Relocation Challenge Tips</h2>
+                <p>Expert advice to help you navigate common challenges when moving to a new country.</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Cultural Adjustment</h3>
+                    <p>Give yourself time to adapt to new customs. Research local traditions before you move and be open to new experiences. Connect with both expat communities and locals to build a support network.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Language Barriers</h3>
+                    <p>Learn basic phrases before arriving. Use language learning apps consistently. Don't be afraid to make mistakes - most people appreciate your effort to communicate in their language.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Documentation Organization</h3>
+                    <p>Keep all important documents in one secure but accessible place. Make digital copies of everything. Create a checklist of required documents for each stage of your relocation process.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Financial Preparation</h3>
+                    <p>Research cost of living thoroughly. Set up an international bank account before moving. Ensure you have access to funds during the transition period and understand tax implications.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Healthcare Navigation</h3>
+                    <p>Research the healthcare system of your new country. Secure international health insurance for the transition. Identify healthcare providers and emergency services in your new area.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Shipping Belongings</h3>
+                    <p>Declutter before packing. Research customs regulations on imported goods. Create an inventory of shipped items and keep essentials with you during the move.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Destinations -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Destinations</h2>
+                <p>Discover the most sought-after relocation destinations that offer exceptional quality of life and opportunities.</p>
+            </div>
+            <div class="destination-grid">
+                <div class="destination-card">
+                     <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="destination-content">
+                        <h3>Ghana</h3>
+                        <p>Experience rich cultural heritage, economic opportunities, and welcoming communities in Ghana. Explore historic sites like Cape Coast Castle and vibrant markets in Accra.</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e51?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="destination-content">
+                        <h3>Kenya</h3>
+                        <p>Discover vibrant cities, stunning landscapes, and growing economic opportunities in Kenya. Experience wildlife safaris, beautiful coastlines, and Nairobi's thriving business scene.</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1484318571209-661cf29a69ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="destination-content">
+                        <h3>South Africa</h3>
+                        <p>Enjoy diverse cultures, breathtaking scenery, and excellent infrastructure in South Africa. From Cape Town's Table Mountain to Johannesburg's economic opportunities.</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                     <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1516545595035-b494dd0161e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="destination-content">
+                        <h3>Morocco</h3>
+                        <p>Immerse yourself in vibrant markets, rich history, and stunning architecture in Morocco. Explore the medinas of Marrakech and the blue streets of Chefchaouen.</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1560691029-4b95442c3eb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="destination-content">
+                        <h3>Tanzania</h3>
+                        <p>Experience incredible wildlife, beautiful beaches, and friendly communities in Tanzania. Home to Mount Kilimanjaro, Serengeti National Park, and Zanzibar's pristine shores.</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="destination-content">
+                        <h3>Egypt</h3>
+                        <p>Explore ancient wonders, vibrant cities, and the majestic Nile River in Egypt. From the pyramids of Giza to the bustling markets of Cairo and resort towns on the Red Sea.</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                     <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80');"></div>
+                    <div class="destination-content">
+                        <h3>Nigeria</h3>
+                        <p>Discover bustling cities, rich cultural diversity, and economic opportunities in Nigeria. Experience Lagos' vibrant energy, Abuja's modern planning, and the cultural heritage of Benin City.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Relocation Packages -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Relocation Packages</h2>
+                <p>Comprehensive packages designed to meet different needs and budgets for your international move.</p>
+            </div>
+            <div class="package-cards">
+                <div class="package-card">
+                    <h3>Essential Journey</h3>
+                    <div class="price">$1,500</div>
+                    <ul class="package-features">
+                        <li>7-day temporary housing</li>
+                        <li>Visa application guidance</li>
+                        <li>Pre-departure consultation</li>
+                        <li>Airport pickup</li>
+                        <li>Local area orientation</li>
+                    </ul>
+                    <a href="https://square.link/u/B6LwdmOI" class="btn" target="_blank">Book Now</a>
+                </div>
+                <div class="package-card featured">
+                    <h3>Comprehensive Return</h3>
+                    <div class="price">$3,500</div>
+                    <ul class="package-features">
+                        <li>30-day housing arrangement</li>
+                        <li>Visa application guidance</li>
+                        <li>Pre-departure consultation</li>
+                        <li>Airport pickup</li>
+                        <li>Local area orientation</li>
+                        <li>Banking setup assistance</li>
+                        <li>Phone & internet setup assistance</li>
+                        <li>Cultural integration program</li>
+                        <li>Community introduction events</li>
+                    </ul>
+                    <a href="https://square.link/u/fKr07MWb" class="btn" target="_blank">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <h3>Legacy Builder</h3>
+                    <div class="price">$7,500</div>
+                    <ul class="package-features">
+                        <li>90-day housing arrangement</li>
+                        <li>Visa application guidance</li>
+                        <li>Pre-departure consultation</li>
+                        <li>Airport pickup</li>
+                        <li>Local area orientation</li>
+                        <li>Banking setup assistance</li>
+                        <li>Phone & internet setup assistance</li>
+                        <li>Cultural integration program</li>
+                        <li>Community introduction events</li>
+                        <li>School/education placement assistance</li>
+                        <li>Business setup consultation</li>
+                        <li>Property investment guidance</li>
+                        <li>Dedicated relocation coach</li>
+                    </ul>
+                    <a href="https://square.link/u/3ojbKmtC" class="btn" target="_blank">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Consultation Packages -->
+    <section id="consultation" class="consultation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Consultation Packages</h2>
+                <p>Expert guidance to help you plan your relocation journey with confidence.</p>
+            </div>
+            <div class="consultation-cards">
+                <div class="consultation-card">
+                    <h3>Basic Consultation</h3>
+                    <div class="consultation-price">$99</div>
+                    <ul class="consultation-features">
+                        <li>30-minute consultation call</li>
+                        <li>Relocation checklist</li>
+                        <li>Destination overview</li>
+                        <li>Resources Guide</li>
+                        <li>Email follow-up</li>
+                    </ul>
+                    <a href="https://square.link/u/HuDomwWq" class="btn" target="_blank">Select Plan</a>
+                </div>
+                <div class="consultation-card">
+                    <h3>Standard Consultation</h3>
+                    <div class="consultation-price">$299</div>
+                    <ul class="consultation-features">
+                        <li>60-minute consultation call</li>
+                        <li>Custom relocation plan</li>
+                        <li>Visa and documentation guidance</li>
+                        <li>Packing and shipping advice</li>
+                        <li>Destination services overview</li>
+                        <li>Follow up email support</li>
+                    </ul>
+                    <a href="https://square.link/u/2OLLHG7n" class="btn" target="_blank">Select Plan</a>
+                </div>
+                <div class="consultation-card">
+                    <h3>Premium Consultation</h3>
+                    <div class="consultation-price">$599</div>
+                    <ul class="consultation-features">
+                        <li>90-minute consultation call</li>
+                        <li>Custom relocation plan</li>
+                        <li>Visa and documentation support</li>
+                        <li>Packing and shipping strategy</li>
+                        <li>Destination services coordination</li>
+                        <li>30-day follow up email support</li>
+                        <li>Exclusive resources</li>
+                    </ul>
+                    <a href="https://square.link/u/Zm2IZoS4" class="btn" target="_blank">Select Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for any questions or to start your relocation journey</p>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm" action="https://formspree.io/f/mjvnqjqr" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">I'm interested in</label>
+                        <select id="interest" name="interest">
+                            <option value="">Select an option</option>
+                            <option value="consultation">Consultation Package</option>
+                            <option value="relocation">Relocation Package</option>
+                            <option value="information">General Information</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Our Last Exodus</h3>
+                    <p>Providing expert relocation services to help individuals and families successfully transition to new countries and communities.</p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@ourlastexodus" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/ourlastexodus/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.pinterest.com/ourlastexodus/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://www.tiktok.com/@ourlastexodus" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Site Map</h3>
+                    <ul class="footer-links">
+                        <li><a href="#purpose">Our Purpose</a></li>
+                        <li><a href="#information">Information</a></li>
+                        <li><a href="#tips">Relocation Tips</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#packages">Relocation Packages</a></li>
+                        <li><a href="#consultation">Consultation</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> admin@ourlastexodus.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Based in US</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Our Last Exodus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section:not(.hero)');
+            
+            const options = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, options);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Make hero section visible immediately
+            document.querySelector('.hero').style.opacity = '1';
+            document.querySelector('.hero').style.transform = 'translateY(0)';
+            
+            // Simple form handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // Form will submit to Formspree
+                    // Show confirmation message
+                    setTimeout(function() {
+                        alert('Thank you for your message! We will contact you shortly.');
+                        contactForm.reset();
+                    }, 100);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
